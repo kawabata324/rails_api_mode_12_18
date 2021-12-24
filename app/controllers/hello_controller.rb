@@ -1,5 +1,6 @@
 class HelloController < ApplicationController
   def index
-    render json:{ status: 'Hello'}
+    @users = User.all
+    render json:{ status: 'Hello',users: @users}
   end
 end
