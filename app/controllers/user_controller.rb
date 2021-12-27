@@ -1,9 +1,8 @@
 class UserController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
+  before_action :authenticate_v1_user!
 
   def show
-    @uid = request.headers[:uid]
-    @user = User.find_by(uid: @uid)
-    render json: { user: @user}
+    render json: { user: current_v1_user}
   end
 end
