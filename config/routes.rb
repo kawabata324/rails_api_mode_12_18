@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :hello
   get 'users/show', to: "user#show"
+  post 'users/name', to: "user#name"
 end
