@@ -8,8 +8,7 @@ class UserController < ApplicationController
 
   def name
     @user = User.find_by(id: current_v1_user.id)
-    @user.name = name_params
-    if @user.save
+    if @user.update(name_params)
       render json: {status: 'ok'}
     else
       render json: {status: 'no'}
