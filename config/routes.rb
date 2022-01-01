@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :hello
   get 'users/show', to: "user#show"
   post 'users/name', to: "user#name"
+  post 'users/selfIntroduction', to: "user#self_introduction"
 end
